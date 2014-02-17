@@ -1,0 +1,3 @@
+[submodule "lib/vendor/small-php-helpers"]
+	path = lib/vendor/small-php-helpers
+	url = git://github.com/fboes/Small-PHP-helpers.git
