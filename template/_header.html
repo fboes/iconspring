@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>IconSpring</title>
+</head>
+<body>
+	<div id="container">
+		<div id="banner" class="header">
+			<header role="banner">
+				IconSpring
+			</header>
+		</div>
+		<div id="main" class="main">
+			<main role="main">
+				<?php if (!empty($messages->messages)): ?>
+					<ul>
+						<?php foreach ($messages->messages as $message): ?>
+							<li><?php _echo($message->message); ?></li>
+						<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>

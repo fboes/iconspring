@@ -3,6 +3,7 @@
 class Iconspring {
 	protected $filename;
 	protected $outPath;
+	protected $outNonWebPath;
 	protected $outHtml = array();
 	protected $outFileHtml = NULL;
 	protected $outFileZip = NULL;
@@ -13,18 +14,16 @@ class Iconspring {
 	 * @param [type] $filename [description]
 	 * @param [type] $outPath  [description]
 	 */
-	public function __construct ($filename, $outPath = NULL) {
+	public function __construct ($filename, $outPath, $outNonWebPath = NULL) {
 		if (!file_exists($filename)) {
 			throw new Exception('File not found');
 		}
-		if (empty($outPath)) {
-			$outPath = dirname($filename).'/';
+		if (!is_dir($outNonWebPath.$outPath)) {
+			mkdir($outNonWebPath.$outPath);
 		}
-		if (!is_dir($outPath)) {
-			mkdir($outPath);
-		}
-		$this->filename = $filename;
-		$this->outPath = $outPath;
+		$this->filename   = $filename;
+		$this->outPath    = $outPath;
+		$this->outNonWebPath = $outNonWebPath;
 	}
 
 	/**
@@ -79,7 +78,7 @@ class Iconspring {
 			.' -gravity '.escapeshellarg($gravity)
 			.' -background transparent'
 			.' -extent '.((int)$width).'x'.((int)$height)
-			.' '.escapeshellarg($this->outPath.$filename)
+			.' '.escapeshellarg($this->outNonWebPath.$this->outPath.$filename)
 		;
 		#print_r($cmd."\n");
 		system($cmd, $retval);

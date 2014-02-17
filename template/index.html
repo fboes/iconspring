@@ -1,31 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8" />
-	<title>IconSpring</title>
-</head>
-<body>
-	<div id="container">
-		<div id="banner" class="header">
-			<header role="banner"><!-- --></header>
-		</div>
-		<div id="navigation" class="nav">
-			<nav role="navigation"><!-- --></nav>
-		</div>
-		<div id="main" class="main">
-			<main role="main">
-				<?php foreach ($data as $filename => $result): ?>
-					<h4><?php echo(htmlspecialchars($filename));?>
-					<pre><?php echo(htmlspecialchars(print_r($result,1)));?></pre>
-				<?php endforeach; ?>
-			</main>
-		</div>
-		<div id="sidebar" class="aside">
-			<aside role="complementary"><!-- --></aside>
-		</div>
-		<div id="footer" class="footer">
-			<footer role="contentinfo"><!-- --></footer>
-		</div>
-	</div>
-</body>
-</html>
+<?php include('_header.html'); ?>
+
+
+<?php
+	$form = Form::init()
+		->start()
+		->input('<input type="file" data-label="Image" name="'.CONF_FIELD_IMAGE.'" required="required" accept="image/*" />')
+		->button('<button>Upload</button>')
+		->end()
+		->echoHtml()
+	;
+?>
+
+
+<?php include('_footer.html'); ?>
