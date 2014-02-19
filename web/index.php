@@ -12,18 +12,25 @@ $messages = new Messages();
 $messages->restoreFromSession();
 $template = 'index.html';
 
+$CONF_FORM_ICONS = array();
+foreach ($CONF_ICONS as $k => $i) {
+	$CONF_FORM_ICONS[$k] = $i[0];
+}
+
 // --------------------------------------------
 // Logic
-if (0) {
+if (isset($_GET['success'])) {
 	$template = 'uploaded.html';
 }
-if (!empty($_FILES[CONF_FIELD_IMAGE])) {
+elseif (!empty($_FILES[CONF_FIELD_IMAGE])) {
 	$success = TRUE;
 	try {
 		$icon = new Iconspring($_FILES[CONF_FIELD_IMAGE]['tmp_name'], CONF_PATH_DOWNLOAD.md5($_FILES[CONF_FIELD_IMAGE]['name']).'/',CONF_PATH_WEB);
 
 		foreach ($CONF_ICONS as $i) {
-			$success &= $icon->build($i[0],$i[1],$i[2],!empty($i[3]) ? $i[3] : $i[2], !empty($i[4]) ? $i[4] : 0);
+			if (in_array($i[0], $_POST[CONF_FIELD_ICONS])) {
+				$success &= $icon->build($i[0],$i[1],$i[2],!empty($i[3]) ? $i[3] : $i[2], !empty($i[4]) ? $i[4] : 0);
+			}
 		}
 		if ($success) {
 			$icon->saveHtml();
@@ -31,7 +38,7 @@ if (!empty($_FILES[CONF_FIELD_IMAGE])) {
 			$template = 'uploaded.html';
 			$messages->addSuccessMessage('Converted images');
 			$messages->storeInSession();
-			header('Location: '.returnCompleteUrl($_SERVER['SCRIPT_NAME']), TRUE, 303);
+			header('Location: '.returnCompleteUrl($_SERVER['SCRIPT_NAME']).'?success', TRUE, 303);
 			exit();
 		}
 		else {

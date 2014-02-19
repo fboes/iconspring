@@ -2,9 +2,12 @@
 
 
 <?php
-	$form = Form::init()
+	$form = Form::init(array(
+			CONF_FIELD_ICONS => $CONF_FORM_ICONS
+		))
 		->start()
 		->input('<input type="file" data-label="Image" name="'.CONF_FIELD_IMAGE.'" required="required" accept="image/*" />')
+		->checkbox('<input type="checkbox" data-label="Icons" name="'.CONF_FIELD_ICONS.'" />', $CONF_FORM_ICONS)
 		->button('<button>Upload</button>')
 		->end()
 		->echoHtml()

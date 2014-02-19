@@ -18,6 +18,12 @@ class Iconspring {
 		if (!file_exists($filename)) {
 			throw new Exception('File not found');
 		}
+		else {
+			$image = getimagesize($filename);
+			if (!preg_match('#îmage/#',$image['mime'])){
+				throw new Exception('File is not an image');
+			}
+		}
 		if (!is_dir($outNonWebPath.$outPath)) {
 			mkdir($outNonWebPath.$outPath);
 		}

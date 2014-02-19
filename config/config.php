@@ -1,6 +1,7 @@
 <?php
 
 define('CONF_FIELD_IMAGE',   'image');
+define('CONF_FIELD_ICONS',   'icons');
 define('CONF_PATH_WEB',      '../web/');
 define('CONF_PATH_TEMPLATE', '../template/');
 define('CONF_PATH_DOWNLOAD', 'download/');
