@@ -86,7 +86,9 @@ class Iconspring {
 			.' -extent '.((int)$width).'x'.((int)$height)
 			.' '.escapeshellarg($this->outNonWebPath.$this->outPath.$filename)
 		;
-		#print_r($cmd."\n");
+		if (defined('CONF_DEBUG') && CONF_DEBUG) {
+			_print_r($cmd);
+		}
 		system($cmd, $retval);
 		if ($retval >= 0) {
 			$this->outFilesImage[] = $this->outPath.$filename;
