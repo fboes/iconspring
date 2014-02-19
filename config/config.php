@@ -2,6 +2,7 @@
 
 define('CONF_FIELD_IMAGE',   'image');
 define('CONF_FIELD_ICONS',   'icons');
+define('CONF_FIELD_GRAVITY', 'gravity');
 define('CONF_PATH_WEB',      '../web/');
 define('CONF_PATH_TEMPLATE', '../template/');
 define('CONF_PATH_DOWNLOAD', 'download/');
@@ -20,4 +21,16 @@ $CONF_ICONS = array(
 	array('windows-medium-icon.png', NULL, 150),
 	array('windows-big-icon.png', NULL, 310),
 	array('windows-semi-big-icon.png', NULL, 310, 150),
+);
+
+$CONF_FORM_GRAVITY = array(
+	'NorthWest',
+	'North',
+	'NorthEast',
+	'West',
+	'Center',
+	'East',
+	'SouthWest',
+	'South',
+	'SouthEast',
 );

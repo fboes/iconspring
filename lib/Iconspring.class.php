@@ -20,7 +20,7 @@ class Iconspring {
 		}
 		else {
 			$image = getimagesize($filename);
-			if (!preg_match('#îmage/#',$image['mime'])){
+			if (!preg_match('#image/#',$image['mime'])){
 				throw new Exception('File is not an image');
 			}
 		}
@@ -42,7 +42,7 @@ class Iconspring {
 	 * @param  [type] $paddingY [description]
 	 * @return bool             [description]
 	 */
-	public function build ($filename, $rel = 'icon', $width, $height = NULL, $paddingX = 0, $paddingY = NULL) {
+	public function build ($filename, $rel = 'icon', $width, $height = NULL, $paddingX = 0, $paddingY = NULL, $gravity = 'center') {
 		$width = (int)$width;
 		if ($height === NULL) {
 			$height = $width;
@@ -54,7 +54,7 @@ class Iconspring {
 		}
 		$paddingY = (int)$paddingY;
 		$filename = basename($filename);
-		if ($this->convertImage($filename, $width, $height, $paddingX, $paddingY)) {
+		if ($this->convertImage($filename, $width, $height, $paddingX, $paddingY, $gravity)) {
 			$this->addOutHtml($filename, $rel, $width, $height);
 			return TRUE;
 		}

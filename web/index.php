@@ -27,9 +27,13 @@ elseif (!empty($_FILES[CONF_FIELD_IMAGE])) {
 	try {
 		$icon = new Iconspring($_FILES[CONF_FIELD_IMAGE]['tmp_name'], CONF_PATH_DOWNLOAD.md5($_FILES[CONF_FIELD_IMAGE]['name']).'/',CONF_PATH_WEB);
 
+		if (empty($_POST[CONF_FIELD_GRAVITY]) || in_array($_POST[CONF_FIELD_GRAVITY], $CONF_FORM_GRAVITY)) {
+			$_POST[CONF_FIELD_GRAVITY] = current($CONF_FORM_GRAVITY);
+		}
+
 		foreach ($CONF_ICONS as $i) {
 			if (in_array($i[0], $_POST[CONF_FIELD_ICONS])) {
-				$success &= $icon->build($i[0],$i[1],$i[2],!empty($i[3]) ? $i[3] : $i[2], !empty($i[4]) ? $i[4] : 0);
+				$success &= $icon->build($i[0],$i[1],$i[2],!empty($i[3]) ? $i[3] : $i[2], !empty($i[4]) ? $i[4] : 0, $_POST[CONF_FIELD_GRAVITY]);
 			}
 		}
 		if ($success) {
