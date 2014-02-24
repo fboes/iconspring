@@ -13,8 +13,11 @@ $messages->restoreFromSession();
 $template = 'index.html';
 
 $CONF_FORM_ICONS = array();
-foreach ($CONF_ICONS as $k => $i) {
-	$CONF_FORM_ICONS[$k] = $i[0];
+foreach ($CONF_ICONS as $k => &$i) {
+	if (empty($i[3])) {
+		$i[3] = $i[2];
+	}
+	$CONF_FORM_ICONS[$i[0]] = $i[0]. ' ('.$i[2].'×'.$i[3].'px)';
 }
 
 // --------------------------------------------
