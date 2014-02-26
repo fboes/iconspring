@@ -1,0 +1,122 @@
+// Webfonts
+
+// see http://compass-style.org/reference/compass/css3/font_face/
+// @include font-face($name, $font-files, $eot, $weight, $style);
+
+// Headings
+
+h1 {
+	font: #{$fontsize-headline*2}/#{$lineheight-headline} $fontfamily-headline
+}
+h2 {
+	font: #{$fontsize-headline*1.5}/#{$lineheight-headline} $fontfamily-headline
+}
+h3 {
+	font: #{$fontsize-headline}/#{$lineheight-headline} $fontfamily-headline
+}
+h4 {
+	font: $font-content;
+	font-weight: bold;
+}
+
+// Text
+
+p {}
+ol {
+	li {}
+}
+ul {
+	li {}
+}
+a {
+	color: $color-link;
+
+	&:link {}
+	&:visited {}
+	&:focus, &:hover {
+		color: $color-link-hover;
+	}
+	&:active {}
+	&.current-active {} // class for links which point to current page
+}
+small {}
+
+
+// Forms
+
+form {
+	fieldset {
+		legend {}
+	}
+	.form-item {
+		&.required {}
+		&.valid {}
+		&.invalid {}
+	}
+	label {
+		&.required {}
+		&.valid {}
+		&.invalid {}
+	}
+	input, select, textarea {
+		&.required, &[required], &:required {}
+		&.valid, &:valid {}
+		&.invalid, &:invalid {}
+	}
+	input {
+		&[type=text], &[type=password], &[type=search], &[type=date], &[type=email], &[type=number] {}
+		&[type=hidden] {}
+		&[type=file] {}
+		&[type=submit] {}
+		&[type=checkbox], &[type=radio] {}
+	}
+	textarea {}
+	select {
+		optgroup {}
+	}
+	button {}
+}
+
+// Tables
+
+table {
+	thead {}
+	tfoot {}
+	tbody {}
+
+	tr {
+		th {}
+		td {}
+	}
+}
+
+// Images
+
+.figure {
+	.figcaption {}
+}
+
+// UI Elements
+
+.shadow {}
+.rounded-corner {}
+.gradient {}
+.button {}
+
+// Special classes
+
+.display-block	{
+	display:block;
+	width:99%;
+}
+.float-right, [align="right"] {
+	float:right;
+	margin:0.25em 0 0.75em 1em;
+}
+.float-left,  [align="left"]  {
+	float:left;
+	margin:0.25em 1em 0.75em 0;
+}
+.clear-both {
+	clear:both;
+}

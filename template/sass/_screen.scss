@@ -1,0 +1,50 @@
+body {
+	color: $color-text;
+	background-color: $backgroundcolor;
+}
+#container {
+	background-color: $backgroundcolor-container;
+	max-width:50em;
+	margin:auto;
+	padding: $padding-default;
+	form {
+		.form-field {
+			display:block;
+			margin-bottom:$margin-default;
+			label {
+				font-weight:bold;
+				display:block;
+			}
+			ul {
+				list-style:none;
+				li {
+					label {
+						font-weight:normal;
+					}
+
+				}
+			}
+		}
+	}
+}
+#banner {
+	font-size:2em;
+	padding-bottom:$padding-default;
+	border-bottom:1px dotted;
+}
+#navigation {
+	// insert stuff here
+}
+#main {
+	padding:$padding-default 0;
+}
+#sidebar {
+	// insert stuff here
+}
+#footer {
+	padding-top:$padding-default;
+	border-top:1px dotted;
+}
+.no-screen {
+	display:none;
+}

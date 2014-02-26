@@ -4,12 +4,12 @@
 <?php
 	$form = Form::init(array(
 			CONF_FIELD_ICONS => $CONF_FORM_ICONS_DEFAULT,
-			CONF_FIELD_GRAVITY => current($CONF_FORM_GRAVITY),
+			CONF_FIELD_GRAVITY => $CONF_FORM_GRAVITY[floor(count($CONF_FORM_GRAVITY)/2)],
 		))
 		->start()
 		->input('<input type="file" data-label="Image" name="'.CONF_FIELD_IMAGE.'" required="required" accept="image/*" />')
 		->checkbox('<input type="checkbox" data-label="Icons" name="'.CONF_FIELD_ICONS.'" />', $CONF_FORM_ICONS)
-		->checkbox('<input type="radio" data-label="Gravity" name="'.CONF_FIELD_GRAVITY.'" />', $CONF_FORM_GRAVITY)
+		->checkbox('<input type="radio" data-label="Gravity" name="'.CONF_FIELD_GRAVITY.'" required="required" />', $CONF_FORM_GRAVITY)
 		->button('<button>Upload</button>')
 		->end()
 		->echoHtml()
