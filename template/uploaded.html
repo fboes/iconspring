@@ -26,6 +26,10 @@
 
 <?php endif; ?>
 
+<?php if(CONF_DEBUG && !empty($icon)): ?>
+	<?php _print_r($icon);?>
+<?php endif; ?>
+
 <a href="<?php _echo($_SERVER['PHP_SELF']);?>">Next image</a>
 
 <?php include('_footer.html'); ?>
