@@ -130,8 +130,8 @@ class Iconspring {
 
 	/**
 	 * [saveHtml description]
-	 * @param  string $filename [description]
-	 * @return [type]           [description]
+	 * @param  string  $filename [description]
+	 * @return boolean           [description]
 	 */
 	public function saveHtml ($filename = 'meta.html') {
 		if (file_put_contents($this->outPath.basename($filename), $this->returnHtml())) {
@@ -141,6 +141,11 @@ class Iconspring {
 		return FALSE;
 	}
 
+	/**
+	 * [zip description]
+	 * @param  string $filename [description]
+	 * @return string           if successful, else NULL
+	 */
 	public function zip ($filename = 'icons.zip') {
 		$oldDir = getcwd();
 		$filename = $this->outPath.$filename;
@@ -154,5 +159,21 @@ class Iconspring {
 			return $filename;
 		}
 		return NULL;
+	}
+
+	/**
+	 * [getZipFilename description]
+	 * @return string [description]
+	 */
+	public function getZipFilename () {
+		return $this->outFileZip;
+	}
+
+	/**
+	 * [getImageFilenames description]
+	 * @return array [description]
+	 */
+	public function getImageFilenames () {
+		return $this->outFilesImage;
 	}
 }

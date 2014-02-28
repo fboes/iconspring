@@ -1,7 +1,29 @@
 <?php include('_header.html'); ?>
 
-<?php if (!empty($icon)): ?>
-	<?php _print_r($icon);?>
+<?php if (!empty($data)): ?>
+	<h4>Results</h4>
+
+	<?php if(!empty($data->html)): ?>
+		<p>Integrate your icons by using this HTML:</p>
+		<?php _print_r($data->html);?>
+	<?php endif; ?>
+
+	<?php if(!empty($data->zip)): ?>
+		<p>
+			<a href="<?php _echo($data->zip);?>" type="application/zip">Download ZIP-Archive</a>
+		</p>
+		<p>This ZIP contains all images as well as an HTML snippet to put the images into your HTML.</p>
+	<?php endif; ?>
+
+	<?php if(!empty($data->images)): ?>
+		<p>…or you can download the images one by one:</p>
+		<ul>
+			<?php foreach($data->images as $i):?>
+				<li><a href="<?php _echo($i);?>" target="image"><?php _echo(basename($i));?></li>
+			<?php endforeach; ?>
+		</ul>
+	<?php endif; ?>
+
 <?php endif; ?>
 
 <a href="<?php _echo($_SERVER['PHP_SELF']);?>">Next image</a>

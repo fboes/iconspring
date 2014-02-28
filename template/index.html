@@ -4,7 +4,7 @@
 <?php
 	$form = Form::init(array(
 			CONF_FIELD_ICONS => $CONF_FORM_ICONS_DEFAULT,
-			CONF_FIELD_GRAVITY => $CONF_FORM_GRAVITY[floor(count($CONF_FORM_GRAVITY)/2)],
+			CONF_FIELD_GRAVITY => array_keys($CONF_FORM_GRAVITY)[floor(count($CONF_FORM_GRAVITY)/2)],
 		))
 		->start()
 		->input('<input type="file" data-label="Image" name="'.CONF_FIELD_IMAGE.'" required="required" accept="image/*" />')
@@ -16,5 +16,8 @@
 	;
 ?>
 
+<?php if(CONF_DEBUG): ?>
+	<?php _print_r($icon);?>
+<?php endif; ?>
 
 <?php include('_footer.html'); ?>

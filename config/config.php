@@ -1,12 +1,13 @@
 <?php
 
-define('CONF_DEBUG',         FALSE);
-define('CONF_FIELD_IMAGE',   'image');
-define('CONF_FIELD_ICONS',   'icons');
-define('CONF_FIELD_GRAVITY', 'gravity');
-define('CONF_PATH_WEB',      '../web/');
-define('CONF_PATH_TEMPLATE', '../template/');
-define('CONF_PATH_DOWNLOAD', 'download/');
+define('CONF_DEBUG',          FALSE);
+define('CONF_FIELD_IMAGE',    'image');
+define('CONF_FIELD_ICONS',    'icons');
+define('CONF_FIELD_GRAVITY',  'gravity');
+define('CONF_PATH_WEB',       '../web/');
+define('CONF_PATH_TEMPLATE',  '../template/');
+define('CONF_PATH_DOWNLOAD',  'download/');
+define('CONF_SESSION_DATA',   'uploaded');
 
 $CONF_ICONS = array(
 	array('favicon.ico', 'shortcut icon', 32),
@@ -34,13 +35,13 @@ $CONF_FORM_ICONS_DEFAULT = array(
 );
 
 $CONF_FORM_GRAVITY = array(
-	'NorthWest',
-	'North',
-	'NorthEast',
-	'West',
-	'Center',
-	'East',
-	'SouthWest',
-	'South',
-	'SouthEast',
+	'NorthWest' => 'Top-left',
+	'North'     => 'Top',
+	'NorthEast' => 'Top-right',
+	'West'      => 'Left',
+	'Center'    => 'Center',
+	'East'      => 'Right',
+	'SouthWest' => 'Bottom-left',
+	'South'     => 'Bottom',
+	'SouthEast' => 'Bottom-right',
 );
