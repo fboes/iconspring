@@ -78,7 +78,7 @@ class Iconspring {
 		}
 		$cmd =
 			'convert'
-			.' -strip -interlace Plane -gaussian-blur 0.05 -quality 85%'
+			.' -strip -interlace Plane -quality 85%'
 			.' '.escapeshellarg($this->filename)
 			.' -resize '.((int)$width-(int)$paddingX).'x'.((int)$height-(int)$paddingY).$enlarge
 			.' -gravity '.escapeshellarg($gravity)
