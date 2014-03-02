@@ -17,7 +17,7 @@ $CONF_ICONS = array(
 	array('apple-touch-icon-76x76.png', 'apple-touch-icon', 76),
 	array('apple-touch-icon-120x120.png', 'apple-touch-icon', 120),
 	array('apple-touch-icon.png', 'apple-touch-icon', 152),
-	array('favicon.png', NULL, 128),
+	array('favicon.png', NULL, 196),
 	array('firefox-os-icon.png', NULL, 60, 60, 8),
 	array('tile-small.png', NULL, 70),
 	array('tile-medium.png', NULL, 150),
