@@ -1,9 +1,9 @@
 <?php
-require('../config/config.php');
-require('../lib/vendor/small-php-helpers/Form.class.php');
-require('../lib/vendor/small-php-helpers/Messages.class.php');
-require('../lib/vendor/small-php-helpers/toolshed.php');
-require('../lib/Iconspring.class.php');
+require('app/config/config.php');
+require(CONF_PATH_APP.'lib/vendor/small-php-helpers/Form.class.php');
+require(CONF_PATH_APP.'lib/vendor/small-php-helpers/Messages.class.php');
+require(CONF_PATH_APP.'lib/vendor/small-php-helpers/toolshed.php');
+require(CONF_PATH_APP.'lib/Iconspring.class.php');
 
 // --------------------------------------------
 // Initial variablesa

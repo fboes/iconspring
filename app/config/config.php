@@ -4,9 +4,10 @@ define('CONF_DEBUG',          FALSE);
 define('CONF_FIELD_IMAGE',    'image');
 define('CONF_FIELD_ICONS',    'icons');
 define('CONF_FIELD_GRAVITY',  'gravity');
-define('CONF_PATH_WEB',       '../web/');
-define('CONF_PATH_TEMPLATE',  '../template/');
-define('CONF_PATH_DOWNLOAD',  'download/');
+define('CONF_PATH_APP',       realpath(__DIR__.'/..').'/');
+define('CONF_PATH_WEB',       realpath(__DIR__.'/../..').'/');
+define('CONF_PATH_TEMPLATE',  realpath(__DIR__.'/../template').'/');
+define('CONF_PATH_DOWNLOAD',  CONF_PATH_WEB.'download/');
 define('CONF_SESSION_DATA',   'uploaded');
 
 $CONF_ICONS = array(
