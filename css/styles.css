@@ -72,6 +72,7 @@ body { font: 12px Helvetica, Arial, sans-serif; }
   #container form .form-field ul li label { font-weight: normal; }
   #banner { font-size: 2em; padding-bottom: 8px; border-bottom: 1px dotted; }
   #main { padding: 8px 0; }
+  #sidebar { padding-top: 8px; padding-bottom: 8px; border-top: 1px dotted; }
   #footer { padding-top: 8px; border-top: 1px dotted; }
   .no-screen { display: none; } }
 @media print { * { background: transparent !important; color: black !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }

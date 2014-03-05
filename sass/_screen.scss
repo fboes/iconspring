@@ -39,7 +39,9 @@ body {
 	padding:$padding-default 0;
 }
 #sidebar {
-	// insert stuff here
+	padding-top:$padding-default;
+	padding-bottom:$padding-default;
+	border-top:1px dotted;
 }
 #footer {
 	padding-top:$padding-default;

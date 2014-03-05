@@ -5,8 +5,8 @@
 environment     = :production
 
 sass_dir        = "sass"
-css_dir         = "../web/css"
-images_dir      = "../web/images"
+css_dir         = "css"
+images_dir      = "images"
 relative_assets = true
 
 # The output style for the compiled css. One of: :nested, :expanded, :compact, or :compressed.
