@@ -36,6 +36,11 @@ elseif (!empty($_FILES[CONF_FIELD_IMAGE])) {
 	try {
 		$icon = new Iconspring($_FILES[CONF_FIELD_IMAGE]['tmp_name'], CONF_PATH_DOWNLOAD.md5($_FILES[CONF_FIELD_IMAGE]['name']).'/',CONF_PATH_WEB);
 
+		if (defined('CONF_DEBUG') && CONF_DEBUG) {
+			$icon->moveOriginalImage();
+		}
+
+
 		if (empty($_POST[CONF_FIELD_GRAVITY]) || !in_array($_POST[CONF_FIELD_GRAVITY], array_keys($CONF_FORM_GRAVITY))) {
 			$_POST[CONF_FIELD_GRAVITY] = current(array_keys($CONF_FORM_GRAVITY));
 		}

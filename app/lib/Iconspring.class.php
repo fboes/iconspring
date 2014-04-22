@@ -25,11 +25,29 @@ class Iconspring {
 			}
 		}
 		if (!is_dir($outNonWebPath.$outPath)) {
-			mkdir($outNonWebPath.$outPath);
+			if (!mkdir($outNonWebPath.$outPath)) {
+				throw new Exception('Cannot create folder '.$outNonWebPath.$outPath.', check access rights');
+			}
 		}
 		$this->filename   = $filename;
 		$this->outPath    = $outPath;
 		$this->outNonWebPath = $outNonWebPath;
+	}
+
+	/**
+	 * [moveOriginalImage description]
+	 * @param  string  $tgt [description]
+	 * @return boolean      [description]
+	 */
+	public function moveOriginalImage ($tgt = NULL) {
+		if (empty($tgt)) {
+			$tgt = $this->outNonWebPath . $this->outPath . 'source.png';
+		}
+		if (move_uploaded_file($this->filename, $tgt)) {
+			$this->filename = $tgt;
+			return TRUE;
+		}
+		return FALSE;
 	}
 
 	/**
@@ -86,11 +104,11 @@ class Iconspring {
 			.' -extent '.((int)$width).'x'.((int)$height)
 			.' '.escapeshellarg($this->outNonWebPath.$this->outPath.$filename)
 		;
+		$success = system($cmd, $retval);
 		if (defined('CONF_DEBUG') && CONF_DEBUG) {
-			_print_r($cmd);
+			_print_r(array($cmd, $success));
 		}
-		system($cmd, $retval);
-		if ($retval >= 0) {
+		if ($success) {
 			$this->outFilesImage[] = $this->outPath.$filename;
 			return TRUE;
 		}
