@@ -25,9 +25,11 @@ class Iconspring {
 			}
 		}
 		if (!is_dir($outNonWebPath.$outPath)) {
+			$old_umask = umask(0);
 			if (!mkdir($outNonWebPath.$outPath)) {
 				throw new Exception('Cannot create folder '.$outNonWebPath.$outPath.', check access rights');
 			}
+			umask($old_umask);
 		}
 		$this->filename   = $filename;
 		$this->outPath    = $outPath;
