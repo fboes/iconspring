@@ -19,7 +19,7 @@
 		<p>…or you can download the images one by one:</p>
 		<ul>
 			<?php foreach($data->images as $i):?>
-				<li><a href="<?php _echo($i);?>" target="image"><?php _echo(basename($i));?></li>
+				<li><a href="<?php _echo($i);?>" target="image"><img src="<?php _echo($i);?>" alt="" /><br /><?php _echo(basename($i));?></li>
 			<?php endforeach; ?>
 		</ul>
 	<?php endif; ?>

@@ -1,6 +1,6 @@
 <?php
 
-define('CONF_DEBUG',          TRUE);
+define('CONF_DEBUG',          FALSE);
 define('CONF_FIELD_IMAGE',    'image');
 define('CONF_FIELD_ICONS',    'icons');
 define('CONF_FIELD_GRAVITY',  'gravity');
