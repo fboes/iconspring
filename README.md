@@ -11,6 +11,11 @@ Setup
 1. Make sure the directory `app` ist not accessible via HTTP.
 2. Create a directory `download` and make it writeable for your webserver user.
 
+Version
+-------
+
+Version: 0.3 (2014-07-25)
+
 Legal stuff
 -----------
 
