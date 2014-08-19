@@ -10,11 +10,14 @@ define('CONF_PATH_TEMPLATE',  realpath(__DIR__.'/../template').'/');
 define('CONF_PATH_DOWNLOAD',  'download/');
 define('CONF_SESSION_DATA',   'uploaded');
 
+// see http://css-tricks.com/favicon-quiz/
 $CONF_ICONS = array(
 	array('favicon.ico', 'shortcut icon', 32),
-	array('apple-touch-icon-72x72.png', 'apple-touch-icon', 72),
-	array('apple-touch-icon-114x114.png', 'apple-touch-icon', 114),
-	array('apple-touch-icon-144x144.png', 'apple-touch-icon', 144),
+	array('apple-touch-icon-ios6-57x57.png', 'apple-touch-icon', 57),
+	array('apple-touch-icon-ios6-72x72.png', 'apple-touch-icon', 72),
+	array('apple-touch-icon-ios6-114x114.png', 'apple-touch-icon', 114),
+	array('apple-touch-icon-ios6.png', 'apple-touch-icon', 144),
+	array('apple-touch-icon-60x60.png', 'apple-touch-icon', 60),
 	array('apple-touch-icon-76x76.png', 'apple-touch-icon', 76),
 	array('apple-touch-icon-120x120.png', 'apple-touch-icon', 120),
 	array('apple-touch-icon.png', 'apple-touch-icon', 152),
