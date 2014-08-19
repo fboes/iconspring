@@ -20,10 +20,10 @@ $CONF_ICONS = array(
 	array('apple-touch-icon.png', 'apple-touch-icon', 152),
 	array('favicon.png', NULL, 196),
 	array('firefox-os-icon.png', NULL, 60, 60, 8),
-	array('tile-small.png', NULL, 70),
-	array('tile-medium.png', NULL, 150),
-	array('tile.png', NULL, 310),
-	array('tile-wide.png', NULL, 310, 150),
+	array('tile-small.png', NULL, 128),
+	array('tile-medium.png', NULL, 270),
+	array('tile.png', NULL, 558),
+	array('tile-wide.png', NULL, 558, 270),
 );
 
 $CONF_FORM_ICONS_DEFAULT = array(
