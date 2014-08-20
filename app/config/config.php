@@ -12,7 +12,7 @@ define('CONF_SESSION_DATA',   'uploaded');
 
 // see http://css-tricks.com/favicon-quiz/
 $CONF_ICONS = array(
-	array('favicon.ico', 'shortcut icon', 32),
+	array('favicon.ico', 'shortcut icon', 48),
 	array('apple-touch-icon-ios6-57x57.png', 'apple-touch-icon', 57),
 	array('apple-touch-icon-ios6-72x72.png', 'apple-touch-icon', 72),
 	array('apple-touch-icon-ios6-114x114.png', 'apple-touch-icon', 114),
